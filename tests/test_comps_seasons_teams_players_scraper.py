@@ -38,7 +38,7 @@ class TestCompetitionsSeasonsTeamsScraper(unittest.TestCase):
         self.italy_serie_b_url = f"{TRANSFERMARKT_BASE_URL}/serie-b/startseite/wettbewerb/IT2"
         self.obj = CompetitionsSeasonsTeamsScraper()
         # MLS response page
-        html_mls = get_html_text_from_a_test_data_zip_file("mls_competition_page.html")
+        self.html_mls = get_html_text_from_a_test_data_zip_file("mls_competition_page.html")
         # MLS 2022 response page
         self.html_mls_2022 = get_html_text_from_a_test_data_zip_file("mls_competition_page.html")
         # Italy Serie B response page
