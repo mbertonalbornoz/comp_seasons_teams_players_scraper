@@ -121,8 +121,7 @@ class CompetitionScraper:
             value = json.loads(key_value)
         except Exception:
             value = [dict.fromkeys(self.COLS_IN_ORDER)]
-        data_from_key = pd.DataFrame(value)
-        return data_from_key
+        return pd.DataFrame(value)
 
     def get_competition_info_from_competition_url(self, url=None):
         url = url if url else self.url
