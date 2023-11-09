@@ -67,10 +67,9 @@ class CompetitionsSeasonsTeamsScraper:
                     CompetitionScraper(url=f'{TRANSFERMARKT_BASE_URL}{country_url}').get_competitions_info_from_session_storage()
                 )
             return pd.concat(competitions_to_update, ignore_index=True).dropna(subset=['competition_url'])
-        else:
-            return CompetitionScraper(url=self.url).get_competitions_info_from_session_storage().dropna(
-                subset=['competition_url']
-            )
+        return CompetitionScraper(url=self.url).get_competitions_info_from_session_storage().dropna(
+            subset=['competition_url']
+        )
 
     def _get_team_names_ids_and_urls(self, souped_page, full_url):
         teams_table = self._get_table_of_interest(souped_page)
